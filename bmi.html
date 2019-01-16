@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+<body>
+
+<form>
+    Chiều cao: <input type="number" id="height">
+    <br>
+    Cân nặng: <input type="number" id="weight">
+    <br>
+    <input type="button" value="Result!" onclick="Result()">
+</form>
+<h4 id="bmi"></h4>
+<script>
+    var result = document.getElementById("bmi");
+    function Result() {
+        let cao = document.getElementById("height").value;
+        let nang = document.getElementById("weight").value;
+        let bmi = nang/Math.pow(cao,2);
+        if (bmi < 18)
+           result.innerText = "Underweight";
+        else if (bmi < 25.0)
+           result.innerText = "Normal";
+        else if (bmi < 30.0)
+           result.innerText= "Overweight";
+        else
+           result.innerText= "Obese";
+    }
+</script>
+</body>
+</html>
